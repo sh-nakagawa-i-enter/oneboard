@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BoardController::class, 'index']);
+Route::resource('board', BoardController::class);
+Route::put('board/{id}', [BoardController::class, 'update'])->name('board.update');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
