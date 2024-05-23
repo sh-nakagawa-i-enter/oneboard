@@ -18,6 +18,10 @@ return new class extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
             $table->tinyInteger('delete_flag')->default(0);
+            $table->unsignedBigInteger('user_id');
+            
+            // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,6 +30,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        $table->dropForeign('board_user_id_foreign');
         Schema::dropIfExists('board');
     }
 };
