@@ -21,7 +21,7 @@
                         </div>
                         <div>
                             {{-- 時間 --}}
-                            <span class="text-muted text-gray-500">{{ $board->created_at->format('Y年m月d日 h:m') }}</span>
+                            <span class="text-muted text-gray-500">{{ $board->created_at->format('Y年m月d日 H:m') }}</span>
                         </div>
                     </div>
                     <div class="buton">

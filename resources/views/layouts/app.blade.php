@@ -22,6 +22,11 @@
         		{{ session('result') }}
         	</div>
         @endif
+        @if(session('noresult'))
+        	<div class="not-save">
+        		{{ session('noresult') }}
+        	</div>
+        @endif
 
         <div class="container mx-auto">
             {{-- エラーメッセージ

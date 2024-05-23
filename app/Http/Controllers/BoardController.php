@@ -51,14 +51,15 @@ class BoardController extends Controller
         ]);*/
         
         //メッセージを作成
-        $board = new Board;
-        $board->user_name = $request->user_name;
-        $board->message = $request->message;
-        //セーブできた時に走るフラッシュメソッド
-        if($board->save()){
+        //セーブができたかどうかの判定と表示
+        try {
+            $board = new Board;
+            $board->user_name = $request->user_name;
+            $board->message = $request->message;
+            $board->save();
             session()->flash('result', '投稿しました！');
-        }else{
-            session()->flash('result', '投稿失敗しました');
+        } catch (\Exception $e) {
+            session()->flash('noresult', '投稿失敗しました');
         }
         
         // 前のURLへリダイレクトさせる
