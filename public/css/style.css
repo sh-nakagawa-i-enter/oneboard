@@ -4,6 +4,15 @@
     background-color:#f0f8ff;
 }
 
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.user_name{
+    font-size:16px;
+}
+
 .title-hitokoto{
     font-size:20px;
     font-weight:bold;
@@ -69,11 +78,17 @@
 .list-content{
     background-color:#fffffa;
     margin-bottom:15px;
+    padding:5px 0;
 }
 
 .v-list{
     padding:10px;
     
+}
+
+.micropost{
+    display:flex;
+    justify-content:flex-start;
 }
 
 .text-name{

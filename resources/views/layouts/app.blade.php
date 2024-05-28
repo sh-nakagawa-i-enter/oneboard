@@ -11,8 +11,8 @@
 
     <body class="background">
 
-        {{-- ナビゲーションバー
-        @include('commons.navbar') --}}
+        {{-- ナビゲーションバー --}}
+        @include('commons.navbar')
         
         <h1 class="title-hitokoto">ひとこと掲示板</h1>
         

@@ -3,6 +3,7 @@
         <form method="POST" action="{{ route('board.store') }}">
             @csrf
             
+            {{-- 投稿者名記入欄 
             <div class="text-box">
                 <div class="error_alert">
                     <h2 class="board-name">投稿者名</h2>
@@ -10,6 +11,7 @@
                 </div>
                 <input type="text" rows="2" name="user_name" class="name-box">
             </div>
+            --}}
         
             <div class="text-box">
                 <div class="error_alert">
