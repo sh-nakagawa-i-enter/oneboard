@@ -19,19 +19,21 @@
                                 <p class="text-message">{{ $board->message }}</p>
                             </div>
                         </div>
-                        {{-- 自分の投稿を削除するボタン --}}
-                        @if (\Auth::id() === $board->user_id)
-                            <div class="buton">
-                                <form action="{{ route('board.update', $board->message_id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                <button type="submit" class="butn">削除</button>
-                                </form>
+                        <div class="btn-group">
+                            {{-- 自分の投稿を削除するボタン --}}
+                            @if (\Auth::id() === $board->user_id)
+                                <div class="buton">
+                                    <form action="{{ route('board.update', $board->message_id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                    <button type="submit" class="butn">削除</button>
+                                    </form>
+                                </div>
+                            @endif
+                            {{-- お気に入りボタン --}}
+                            <div>
+                                @include('user_favorite.favorite_button')
                             </div>
-                        @endif
-                        {{-- お気に入りボタン --}}
-                        <div>
-                            @include('user_favorite.favorite_button')
                         </div>
                     </li>
                 @endforeach

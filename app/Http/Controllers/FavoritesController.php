@@ -11,7 +11,7 @@ class FavoritesController extends Controller
         $data = [];
         if (\Auth::check()) { // 認証済みの場合
             // お気に入り追加している投稿の一覧を作成日時の降順で取得
-            $boards = \Auth::user()->feed_favoreites()->orderBy('created_at', 'desc')->paginate(10);
+            $boards = \Auth::user()->feed_favoreites()->active()->orderBy('created_at', 'desc')->paginate(10);
             $data = [
                 'boards' => $boards,
             ];
